@@ -6,11 +6,11 @@
   --size-subtitle: 0.5rem;
   --size-numbers: 2rem;
 
-  --color-primary: #474961;
-  --color-secondary: #0a102e;
-  --color-accent: #ff7844;
+  --color-primary: #261c2c;
+  --color-secondary: #3e2c41;
+  --color-accent: #5c527f;
   --color-dark: #000;
-  --color-light: #eeeeee;
+  --color-light: #6e85b2;
 
   --family-text: "Roboto", sans-serif;
   --family-title: "Roboto", sans-serif;
@@ -38,16 +38,52 @@ html {
 
 body {
   font-size: var(--size-text);
-  color: var(--color-light);
+  color: var(--color-dark);
   list-style: none;
   font-family: var(--family-text);
   font-weight: normal;
   text-decoration: none;
   text-transform: none;
   line-height: 1.6;
-  background-color: var(--color-primary);
+  background-color: var(--color-light);
 }
 
 main {
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calc-container {
+  max-width: 20%;
+  background-color: var(--color-primary);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border-radius: 5px;
+}
+
+.general-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.input {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.button {
+  text-align: center;
+  min-width: 18%;
+  padding: 0.6rem 0.6rem;
+  margin-bottom: 0.5rem;
+  margin-left: 0.2rem;
+  border-radius: 2px;
 }
