@@ -1,42 +1,24 @@
-//operations functions
-const sum = function (a, b) {
-  return a + b;
+let operation = document.querySelector(".output");
+const buttonValues = document.querySelectorAll(".button:not(.clear, .result)");
+const resultButton = document.querySelector(".result");
+const clearButton = document.querySelector(".clear");
+let calc = (number) => {
+  operation.value += number;
 };
 
-const substraction = function (a, b) {
-  return a - b;
+let clearConsole = () => {
+  operation.value = "";
 };
 
-const multiplication = function (a, b) {
-  return a * b;
+let result = () => {
+  operation.value = eval(operation.value);
 };
 
-const division = function (a, b) {
-  return a / b;
-};
+resultButton.onclick = result;
+clearButton.onclick = clearConsole;
 
-const power = function (a, b) {
-  return Math.pow(a, b);
-};
-
-const greaterThan = function (a, b) {
-  return a > b;
-};
-
-const minerThan = function (a, b) {
-  return a < b;
-};
-
-const greaterEqualThan = function (a, b) {
-  return a >= b;
-};
-
-const minerEqualThan = function (a, b) {
-  return a <= b;
-};
-
-const equal = function (a, b) {
-  return a === b;
-};
-
-
+buttonValues.forEach((button) => {
+  button.onclick = function () {
+    calc(button.dataset.value);
+  };
+});

@@ -6,11 +6,11 @@
   --size-subtitle: 0.5rem;
   --size-numbers: 2rem;
 
-  --color-primary: #261c2c;
-  --color-secondary: #3e2c41;
-  --color-accent: #5c527f;
+  --color-primary: #222831;
+  --color-secondary: #393e46;
+  --color-accent: #ffd369;
   --color-dark: #000;
-  --color-light: #6e85b2;
+  --color-light: #eeeeee;
 
   --family-text: "Roboto", sans-serif;
   --family-title: "Roboto", sans-serif;
@@ -38,14 +38,19 @@ html {
 
 body {
   font-size: var(--size-text);
-  color: var(--color-dark);
+  color: var(--color-light);
   list-style: none;
   font-family: var(--family-text);
   font-weight: normal;
   text-decoration: none;
   text-transform: none;
   line-height: 1.6;
-  background-color: var(--color-light);
+  background: rgb(243, 243, 243);
+  background: linear-gradient(
+    0deg,
+    rgba(243, 243, 243, 1) 0%,
+    rgba(255, 211, 105, 1) 88%
+  );
 }
 
 main {
@@ -57,13 +62,24 @@ main {
 
 .calc-container {
   max-width: 20%;
-  background-color: var(--color-primary);
+  background-color: var(--color-accent);
   padding: 1rem 2rem;
   display: flex;
   align-items: center;
   flex-direction: column;
   flex-wrap: wrap;
   border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+}
+
+.output {
+  width: 100%;
+  background-color: var(--color-dark);
+  color: var(--color-accent);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
 .general-content {
@@ -74,16 +90,24 @@ main {
   flex-wrap: wrap;
 }
 
-.input {
-  width: 100%;
-  margin-bottom: 1rem;
-}
-
 .button {
+  cursor: pointer;
   text-align: center;
   min-width: 18%;
   padding: 0.6rem 0.6rem;
   margin-bottom: 0.5rem;
   margin-left: 0.2rem;
   border-radius: 2px;
+  background-color: var(--color-secondary);
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  transition: 0.2s ease;
+}
+
+.button:hover {
+  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+}
+
+.button:active {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(3, 102, 214, 0.3) 0px 18px 36px -18px inset;
 }
